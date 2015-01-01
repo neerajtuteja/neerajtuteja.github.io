@@ -1,0 +1,1022 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sichuan Tourism official website</title>
+<base href="//global.tsichuan.com"/><link type="text/css" rel="stylesheet" href="http://global.tsichuan.com/css/style.css" />
+<link type="text/css" rel="stylesheet" href="http://global.tsichuan.com/css/wdjdemo.css" />
+<link href="http://global.tsichuan.com/css/style02.css" rel="stylesheet" type="text/css">
+<link type="text/css" rel="stylesheet" href="http://global.tsichuan.com/css/bootstrap.min.css" />
+<link rel="stylesheet" href="http://global.tsichuan.com/css/style04.css" >
+<script src="http://global.tsichuan.com/js/jquery.js" type="text/javascript" charset="utf-8" ></script>
+<script src="http://global.tsichuan.com/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://global.tsichuan.com/js/ajax_form.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://global.tsichuan.com/js/jquery.slides.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://global.tsichuan.com/js/nav.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://global.tsichuan.com/js/jwplayer.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://global.tsichuan.com/js/share.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://global.tsichuan.com/js/wdjfunction/function.js" type="text/javascript" charset="utf-8"></script>
+<style type="text/css">
+    #map_back{background:url(http://global.tsichuan.com/images/ditu/map-b.png);}
+</style>
+<script> 
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ 
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), 
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) 
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga'); 
+
+ga('create', 'UA-56173432-1', 'auto'); 
+ga('require', 'displayfeatures'); 
+ga('send', 'pageview'); 
+
+</script>
+<script type="text/javascript">
+    $(document).ready(function(e) {
+        //设置Cookie
+		if(getCookie('lang') == null){
+			if(getCookie('lang') == 'en'){
+				window.location.href='http://global.tsichuan.com/home/language/english';
+			}else if(getCookie('lang') == 'fn'){
+				window.location.href='http://global.tsichuan.com/home/language/french';
+			}else if(getCookie('lang') == 'sn'){
+				window.location.href='http://global.tsichuan.com/home/language/spanish';
+			}else if(getCookie('lang') == 'gn'){
+				window.location.href='http://global.tsichuan.com/home/language/german';
+			}else if(getCookie('lang') == 'rn'){
+				window.location.href='http://global.tsichuan.com/home/language/ru';
+            }else if(getCookie('lang') == 'jn'){
+                window.location.href='http://global.tsichuan.com/home/language/japanese';
+            }else if(getCookie('lang') == 'kn'){
+                window.location.href='http://global.tsichuan.com/home/language/korean';
+			}else if(getCookie('lang') == 'tn'){
+				window.location.href='http://global.tsichuan.com/home/language/traditional';
+			}else{
+				 /* 获取系统或浏览器默认语言 */ 
+				setCookie('lang',"en");
+				if (navigator.userLanguage) {
+					baseLang = navigator.userLanguage.toLowerCase();
+				} else {
+					baseLang = navigator.language.toLowerCase();
+				}
+
+				switch(baseLang){
+					case 'zh-tw':
+						window.location.href='http://global.tsichuan.com/home/language/traditional';
+						break;
+					case 'zh-hk':
+						window.location.href='http://global.tsichuan.com/home/language/traditional';
+						break;
+                    case 'zh-mo':
+                        window.location.href='http://global.tsichuan.com/home/language/traditional';
+                        break;
+					case 'fr':
+						window.location.href='http://global.tsichuan.com/home/language/french';
+						break;
+					case 'es':
+						window.location.href='http://global.tsichuan.com/home/language/spanish';
+						break;
+					case 'de':
+						window.location.href='http://global.tsichuan.com/home/language/german';
+						break;
+					case 'ru':
+						window.location.href='http://global.tsichuan.com/home/language/ru';
+						break;
+					case 'en':
+						window.location.href='http://global.tsichuan.com/home/language/english';
+						break;
+                    case 'ja':
+                        window.location.href='http://global.tsichuan.com/home/language/japanese';
+                        break;
+                    case 'ko':
+                        window.location.href='http://global.tsichuan.com/home/language/korean';
+                        break;
+					default:
+						window.location.href='http://global.tsichuan.com/home/language/english';
+				}
+			 }
+		 }else{
+			setCookie('lang',"en");
+		 }
+    });
+    
+     //登录
+    function login(){
+        var addUrl="http://global.tsichuan.com/login/loginAct";
+        var options ={
+            dataType:'json',
+            url:addUrl,
+            success:addSuccess
+        };
+        $('#loginss').ajaxSubmit(options);
+    }
+
+    
+    function join(){
+        var loginname = $('input[name=usernname]').val();
+        var password = $('input[name=passwords]').val();
+        var confpassword = $('input[name=confpassword]').val();
+        if(loginname == ''){
+            alert("Please enter your user name");
+            $('input[name=usernname]').focus();
+            return false;
+        }
+        if(password == ''){
+            alert("Please enter a password");
+            $('input[name=passwords]').focus();
+            return false;
+        }
+        if(password.length < 6){
+            alert('Password At least 6');
+            $('input[name=passwords]').focus();
+            return false;
+        }
+        if(confpassword == ''){
+            alert("Please enter the confirmation code");
+            $('input[name=confpassword]').focus();
+            return false;
+        }
+        if(confpassword !== password){
+            alert("Two passwords do not match");
+            $('input[name=confpassword]').focus();
+            return false;
+        }
+        $.post('http://global.tsichuan.com/login/regAct',
+        {'TRAVEL':'a09588a6daf0b64ec7a469dee6f929eb',
+          'loginname':loginname,'password':password,'confpassword':confpassword
+        },function (data){
+            if(data == 1){
+                alert("Successful registration,Please log in");
+                window.location.replace(location);
+            }else{
+                alert(data);
+            }
+        });
+    }
+    
+  $(function(){$('#index_box #content .weather').html("<img style='margin:35px 0 0 20px;' src='http://global.tsichuan.com/images/icon/loading.gif'/>");getWeaData('http://global.tsichuan.com/home/index/weather')});var curDayWeather=new Array();var cache=new Array();function getWeaData(url){if(typeof(cache[url])=="undefined"){$.getJSON(url,function(data){var w_info=data;curDayWeather['city']=w_info.city;curDayWeather['img1']=w_info.img1;curDayWeather['ptime']=w_info.ptime;curDayWeather['temp1']=w_info.temp1;curDayWeather['temp2']=w_info.temp2;var zbtqIcon="<img alt='"+curDayWeather['city']+'-'+curDayWeather['ptime']+"' title='"+curDayWeather['city']+'-'+curDayWeather['ptime']+"' src='http://global.tsichuan.com/images/icons/"+curDayWeather['img1']+'.png'+"' />";var str='<ul style="margin:30px 0 0 20px;">';str+="<li style='color:#595E80;font-size:16px;'>"+zbtqIcon+"&nbsp;"+curDayWeather['temp2']+'°C'+"<li>";str+="<li style='color:#595E80;font-size:16px;margin-top:5px;'>"+curDayWeather['temp2']+"°C / "+curDayWeather['temp1']+"°C<li>";str+='</ul>';$('#index_box #content .weather').html(str);cache[url]=str})}else{$('#index_box #content .weather').html(cache[url])}}
+</script>
+<script type="text/javascript">
+ //google统计
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-47292893-1', 'tsichuan.com');
+  ga('send', 'pageview');
+</script>
+</head>
+<body class="index_body">
+<!--content-->
+<div id="index_box">
+<div id="content">
+    <!--顶部导航-->
+    <div class="w950 top">
+    <a href="http://global.tsichuan.com/" class="logo"></a>
+    <div class="weather">
+		
+	</div>
+    <div id="lang_list"></div> 
+        <!-- Baidu Button BEGIN -->
+   <div onmouseleave="javascript:$(this).css('display','none');"  id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" style='position: absolute; z-index: 999;display:none;'>
+        <a href="#" class="bds_twi twitter" title="Share to Twitter">Twitter</a>
+        <a href="#" class="bds_fbook facebook" title="Share to Facebook">Facebook</a>
+        <a class="bds_tsina" log="pos:tsina" title="Share to sina weibo" href="#">Sina weibo</a>
+    </div>
+    <script type="text/javascript" id="bdshare_js" data="type=tools&mini=1" ></script> 
+    <script type="text/javascript" id="bdshell_js"></script> 
+    <script type="text/javascript">
+        var bds_config = {
+            'bdDes':"Amazing Sichuan",        //'请参考自定义分享摘要'
+            'bdText':"Welcome to sichuan !",       //'请参考自定义分享内容'
+            'bdPopTitle':'Amazing Sichuan',    //'请参考自定义pop窗口标题'
+            'bdPic':"http://global.tsichuan.com/images/home/fenxiang_index.jpg", //'请参考自定义分享出去的图片'
+            'snsKey':{'tsina':'appkey'}     //'请参考自定义分享到平台的appkey'
+        }
+        document.getElementById('bdshell_js').src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+    </script>
+<!-- Baidu Button END -->
+    <div class="top_box">
+        <a href="#" class="w80"></a>
+        <a href="#" class="w60"></a>
+        <a href="#" class="w60" onmouseover="javascript:$('#bdshare').css('display','block');"></a>
+        <a href="#" class="w140" id="lang"></a>
+        <div id="login_btn">
+                             <!--Your trip-->
+                <a href="http://global.tsichuan.com/home/user/trip" class="your_trip">My trip</a>
+                <!--Login / Sign up-->
+                <a href="javascript:void(0);" class="login" id="login">Login/Sign up</a>
+                <!--User Center-->
+                <a href="#" class="user_center">User Center</a>
+                <!--User name-->
+                <span class="user_name">Tourists, Hello</span>
+                 
+                    </div>
+    </div>      
+     <div id="search">
+		<form action="http://global.tsichuan.com/home/search/index" method="post" accept-charset="utf-8"><div style="display:none">
+<input type="hidden" name="TRAVEL" value="a09588a6daf0b64ec7a469dee6f929eb" />
+</div>			<input name="search" type="text" style="" value="" placeholder="Search" class="input_txt">
+			<input type="image" src="http://global.tsichuan.com/images/home/search.png" class="sub" />
+		</form>
+    </div>   
+  <!--主导航-->
+    <div id="nav">
+        <ul>
+            <li><a href="http://global.tsichuan.com/home/know/index" id="nav_1">About Sichuan</a></li>
+            <li><a href="http://global.tsichuan.com/home/explore/index" id="nav_2">Explore Sichuan</a></li>
+            <li><a href="http://global.tsichuan.com/home/line/index" id="nav_3">Theme Routes</a></li>
+            <li><a href="http://global.tsichuan.com/home/walk/index" id="nav_4">Go To Sichuan</a></li>
+            <li><a href="http://global.tsichuan.com/home/activity/index" id="nav_5">Promotions</a></li>
+        </ul>
+    </div>
+    <!--主导航 end-->  
+    <!--大下拉引用-->
+      <link type="text/css" rel="stylesheet" href="http://global.tsichuan.com/css/wdjdemo.css" />
+ <!--下拉1-->
+    <div id="nav_list_1">
+    	<div class="line"></div>
+        <div class="list_bg">
+    <div class="list_pullPub">
+        <h3>
+            <a href="/home/know/about" style="color:#ecb22c;">
+                Overview            </a>
+        </h3>
+        <ul>
+            <li><a href="/home/know/about#Geography">Geography</a></li>
+            <li><a href="/home/know/about#History">History</a></li>
+            <li><a href="/home/know/about#Culture">Culture</a></li>
+            <li><a href="/home/know/about#People">People</a></li>
+            <li><a href="/home/know/about#Economy">Economy</a></li>
+            <li><a href="/home/know/about#Climate">Climate</a></li>
+        </ul>
+    </div>
+    <div class="list_pullPub">
+        <h3>
+            <a href="/home/know/index" style="color:#ecb22c;">
+                Sichuan Icons            </a>
+        </h3>
+        <ul>
+            <li>
+                <a href="/home/know/info/41">
+					 Pandas                </a>
+            </li>
+            <li>
+                <a href="/home/know/info/66">
+                     Sichuan opera                </a>
+            </li>
+            <li>
+                <a href="/home/know/info/67">
+					Sichuan hotpo...                </a>
+            </li>
+            <li>
+                <a href="/home/know/info/68">
+                     Sichuan cuisi...                </a>
+            </li>
+            <li>
+                <a href="/home/know/info/83">
+                     Teahouses                </a>
+            </li>
+            <li>
+                <a href="/home/know/info/84">
+                     Mahjong                </a>
+            </li>
+            <li>
+                <a href="/home/know/info/85">
+                     Jiuzhai Valle...                </a>
+            </li>
+            <li>
+                <a href="/home/know/info/86">
+                     Sichuan girls                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="list_pullPub" style='width:435px;'>
+        <h3>
+            <a href="/home/know/tuying" style="color:#ecb22c;">
+                Sichuan Images            </a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="/home/know/yingshi" style="color:#ecb22c;">
+                Sichuan Videos            </a>
+        </h3>
+        <ul style="width:443px;">
+        	<img src="http://global.tsichuan.com/images/home/menu_1_1.jpg">
+        </ul>
+    </div>
+</div>
+    </div>
+    <!--下拉1 end-->
+    
+    <!--下拉2-->
+    <div id="nav_list_2">
+    	<div class="line"></div>
+        <div class="list_bg">
+    <div class="list_pullPub" style="width:440px;">
+        <h3>
+            Sichuan Basin        </h3>
+        <ul >
+            <li>
+                <a href="/home/explore/info/44/44/4">
+                    Mt Qingcheng-Dujiang Dam                </a>
+            </li>
+            <li>
+                <a href="/home/explore/info/45/45/4">
+                    Mt Emei                </a>
+            </li>
+            <li>
+                <a href="/home/explore/info/89/89/4">
+                    Leshan Giant Buddha                </a>
+            </li>
+            <li>
+                <a href="/home/explore/info/90/90/4">
+                    Mt Siguniang                </a>
+            </li>
+            <li>
+                <a href="/home/explore/info/91/91/4">
+                    Southern Sichuan Bamboo Sea                </a>
+            </li>
+            <li>
+                <a href="/home/explore/info/92/92/4">
+                   Giant Panda Breeding Research Base                </a>
+            </li>
+            <li>
+                <a href="/home/explore/info/93/93/4">
+                    China Lane                </a>
+            </li>
+            <li>
+                <a href="/home/explore/info/94/94/4">
+                    Jinli                </a>
+            </li>
+            <li>
+                <a href="/home/explore/info/95/95/4">
+                    Du Fu Thatched Cottage                </a>
+            </li>
+            <li>
+                <a href="/home/explore/info/96/96/4">
+                    Wu Hou Shrine of Chengdu                </a>
+            </li>
+            <li>
+                <a href="/home/explore/info/97/97/4">
+                    Jinsha Site Museum                </a>
+            </li>
+            <li>
+                <a href="/home/explore/info/98/98/4">
+                    Sanxingdui Museum                </a>
+            </li>
+            <li>
+                <a href="/home/explore/info/99/99/4">
+                    Deng Xiaoping Home Village                </a>
+            </li>
+            <li>
+                <a href="/home/explore/info/100/100/4">
+                    Langzhong Ancient Town                </a>
+            </li>
+            <li>
+                <a href="/home/explore/info/101/101/4">
+                    Wenchuan Special Tourism Zone in Ngawa Prefecture                </a>
+            </li>
+            <li>
+                <a href="/home/explore/info/117/117/4">
+                    Beichuan Qiang Tourism Zone                </a>
+            </li>
+			<li style="border-bottom:none;">
+                <a href="/home/explore/index/4/0" style="font:bold 14px/24px Microsoft Yahei;color:#ecb22c;">
+                    Find More...                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="list_pullPub"style="width:440px;">
+        <h3>
+            Plateau in western Sichuan        </h3>
+        <ul>
+            <li>
+                <a href="/home/explore/info/46/46/5">
+                   Daocheng Yading                </a>
+            </li>
+            <li>
+                <a href="/home/explore/info/52/52/5">
+                    Jiuzhai Valley                </a>
+            </li>
+            <li>
+                <a href="/home/explore/info/103/103/5">
+                    Hailuogou Minya Konka                </a>
+            </li>
+            <li>
+                <a href="/home/explore/info/102/102/5">
+                    Huanglong                </a>
+            </li>
+            <li>
+                <a href="/home/explore/info/104/104/5">
+                   Dagu icebergs                </a>
+            </li>
+            <li>
+                <a href="/home/explore/info/105/105/5">
+                    Ruoergai                </a>
+            </li>
+            <li>
+                <a href="/home/explore/info/106/106/5">
+                    Lugu Lake                </a>
+            </li>
+            <li>
+                <a href="/home/explore/info/107/107/5">
+                    The Scenic Spot of Kangding Love Song                </a>
+            </li>
+			<li style="border-bottom:none;">
+                <a href="/home/explore/index/5/0" style="font:bold 14px/24px Microsoft Yahei;color:#ecb22c;">
+                    Find More...                </a>
+           </li>
+            <img src="http://global.tsichuan.com/images/home/explore_nav.jpg" style='margin-top:20px;'>
+        </ul>
+    </div>
+</div>
+    </div>
+    <!--下拉2 end-->
+    
+    <!--下拉3-->
+    <div id="nav_list_3">
+    	<div class="line"></div>
+        <div id="menu-4">
+        <ul>
+            <li id="menu-4-1" class="action">World Natural and Cultural Heritage Sites Tour</li>
+            <li id="menu-4-2" class="">Mystery Tour</li>
+            <li id="menu-4-3" class="">Challenge Tours</li>
+            <li id="menu-4-4" class="">South Sichuan Tour</li>
+            <li id="menu-4-5" class="">Cuisine Tours</li>
+            <li id="menu-4-6" class="">Cultural Tours</li>
+            <li id="menu-4-7" class="">Urban Tour</li>
+            <li id="menu-4-8" class="">Ancient Town Tour</li>
+        </ul>
+        <div id="menu-4-1-cont" style="display: none;">
+            <span><a href="/home/line/info/32/32/6">Huanglong-Jiuzhai Valley World Natural Heritage Loop Tour</a></span>
+            <span><a href="/home/line/info/33/33/6">Dujiangyan-Mt Qingcheng World Cultural Heritage Tour</a></span>
+            <span><a href="/home/line/info/40/40/6">Leshan Giant Buddha-Mt Emei World Cultural Heritage Tour</a></span>
+            <span><a href="/home/line/info/69/69/6">Panda Habitat World Cultural Heritage Tour</a></span>
+        </div>
+        <div id="menu-4-2-cont" style="display: none;">
+             <span><a href="/home/line/info/38/38/7">Daocheng Yading Loop Tour</a></span>
+             <span><a href="/home/line/info/39/39/7">Lugu Lake Theme Route Tour</a></span>
+             <span><a href="/home/line/info/53/53/7">Hailuogou Glacier Theme Tour</a></span>
+             <span><a href="/home/line/info/70/70/7">Red Leaves Tour</a></span>
+             <span><a href="/home/line/info/70/153/7">Maerkang: The Secret Area of Jiarong</a></span>
+        </div>
+        <div id="menu-4-3-cont" style="display: none;">
+            <span><a href="/home/line/info/71/71/18">Self-Drive Tour in the Western</a></span>
+            <span><a href="/home/line/info/72/72/18">Mt Siguniang Climbing Tour</a></span>
+            <span><a href="/home/line/info/72/154/18">Enchanting Hanyuan Self-Driving Trip</a></span>
+        </div>
+        <div id="menu-4-4-cont" style="display: none;">
+            <span><a href="/home/line/info/73/73/19">Southern Sichuan Bamboo Sea Tour</a></span>
+            <span><a href="/home/line/info/73/152/19">Study Trip to Southern Sichuan</a></span>
+        </div>
+        <div id="menu-4-5-cont" style="display: none;">
+            <span><a href="/home/line/info/74/74/20">Sichuan Cuisine Tour</a></span>
+            <span><a href="/home/line/info/75/75/20">Chengdu Snacks</a></span>
+        </div>
+        <div id="menu-4-6-cont" style="display: none;">
+            <span><a href="/home/line/info/76/76/21">Ancient Shu Culture Tour</a></span>
+            <span><a href="/home/line/info/77/77/21">Southern Sichuan Silk Road Tour</a></span>
+            <span><a href="/home/line/info/78/78/21">Three Kingdoms Culture Tour</a></span>
+            <span><a href="/home/line/info/78/155/21">Trip to Well-Know Mountain and Tea of Sichuan</a></span>
+        </div>
+        <div id="menu-4-7-cont" style="display: none;">
+            <span><a href="/home/line/info/79/79/22">Leisure Tour in Chengdu</a></span>
+            <span><a href="/home/line/info/79/151/22">Eco-Tour of Ya’an</a></span>
+        </div>
+        <div id="menu-4-8-cont" style="display: block;">
+            <span><a href="/home/line/info/81/81/23">Tour in Ancient Towns in Suburban</a></span>
+            <span><a href="/home/line/info/82/82/23">Tour in other Ancient Towns Ancient</a></span>
+        </div>
+    </div>
+    <script src="http://global.tsichuan.com/js/wdjfunction/nav_list.js" type="text/javascript" charset="utf-8" ></script>
+    </div>
+    <!--下拉3 end-->
+    
+    <!--下拉4-->
+    <div id="nav_list_4">
+    	<div class="line"></div>
+        <div class="list_bg">
+    <div class="list_pullPub" style="padding: 5px 60px 5px 60px; width:auto;">
+        <h3>
+            <a style="color:#ecb22c;" href="/home/walk/info/15">
+                Transport            </a>
+        </h3>
+        <ul>
+        </ul>
+    </div>
+    <div class="list_pullPub" style="padding: 5px 60px 5px 60px; width:auto;">
+        <h3>
+            <a style="color:#ecb22c;" href="/home/walk/angcy">
+                Travel Agencies            </a>
+        </h3>
+        <ul>
+        </ul>
+    </div>
+    <div class="list_pullPub" style="padding: 5px 30px 5px 30px; width:auto;">
+        <h3>
+            <a style="color:#ecb22c;" href="/home/walk/info/25">
+                Accommodation            </a>
+        </h3>
+        <ul>
+        </ul>
+    </div>
+    <div class="list_pullPub" style="padding: 5px 30px 5px 30px; width:auto;">
+        <h3>
+            <a style="color:#ecb22c;" href="/home/walk/tieshi">
+                Advice and Informati...            </a>
+        </h3>
+        <ul>
+        </ul>
+    </div>
+</div>
+    </div>
+    <!--下拉4 end-->
+    
+    <!--下拉5-->
+    <div id="nav_list_5">
+    	<div class="line"></div>
+        <div class="list_bg" style="height:100px;">
+    <div class="list_pullPub" style="width:170px;">
+        <h3>
+            <a style="color:#ecb22c;" href="/home/activity/info/33">
+                Boao Night for Sichuan, the Voice of Tourism            </a>
+        </h3>
+        <ul>
+        </ul>
+    </div>
+    <div class="list_pullPub" style="width:170px;">
+        <h3>
+            <a style="color:#ecb22c;" href="/home/activity/info/27">
+                Yi Torch Festival            </a>
+        </h3>
+        <ul>
+        </ul>
+    </div>
+    <div class="list_pullPub" style="width:170px;">
+        <h3>
+            <a style="color:#ecb22c;" href="/home/activity/info/28">
+                Leshan Giant Buddha Tourism Culture Festival            </a>
+        </h3>
+        <ul>
+        </ul>
+    </div>
+    <div class="list_pullPub" style="width:170px;">
+        <h3>
+            <a style="color:#ecb22c;" href="/home/activity/info/29">
+                Dujiang Dam Water Festival            </a>
+        </h3>
+        <ul>
+        </ul>
+    </div>
+    <div class="list_pullPub" style="width:170px;">
+        <h3>
+            <a style="color:#ecb22c;" href="/home/activity/info/30">
+                Hongyuan Yak Cultural Festival            </a>
+        </h3>
+        <ul>
+        </ul>
+    </div>
+</div>
+    </div>
+    <!--下拉5 end-->    <!--大下拉引用 end-->  
+    <img src="http://global.tsichuan.com/images/home/en_index_top.png" width="951" height="222">
+    </div>
+    <!--顶部导航 end-->   
+    <!--视频按钮-->
+    <div style="width:325px; height:209px; position:absolute; margin:265px 0 0 100px; top:0; z-index:12; cursor:pointer; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius:5px;" class="video_btn">
+					<img src="http://global.tsichuan.com/images/home/video_icon.png">
+		    </div>
+     <!--视频按钮 end--> 
+
+     <!--熊猫按钮-->
+    <div style="width:177px; height:184px; position:absolute; margin:350px 0 0 680px; top:0; z-index:11; cursor:pointer; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius:5px;" class="">
+        <a href="http://epandafans.tsichuan.com:8080" target="_blank"><img src="http://global.tsichuan.com/images/home/p-logo.png"></a>
+    </div>
+     <!--熊猫按钮 end--> 
+
+    <div id="slides">
+        <div class="page">  
+            <div class="page_info">
+                <h1>Huanglong</h1>
+                Located in Huanglong Village, Songpan County, this area consists of Huanglong canyon, Danyun Gorge, Xuebaoding, and other scenic spots. A UNESCO World Natural Heritage site, Huanglong canyon features surface adarce, over 3,000 spectacular colorful pools, adarce floodland, waterfalls, and caves.<br/>
+                <a href="http://global.tsichuan.com/home/explore/info/102/102/5"><img src="http://global.tsichuan.com/images/home/en_icon_more1.png" style="border:none; padding:15px 0 0 0;"></a>
+            </div>
+            <div class="page_img">
+									<img src="uploads/shouye/1408332255jAKGA.png">
+				            </div>
+        </div>     
+    </div>
+
+    <!--轮播 end-->
+   
+   <div style="line-height:100px; height:100px; font-size:32px; font-family:Verdana, Geneva, sans-serif;color:#FFF; ">WELCOME TO SICHUAN</div>
+   
+   <!--tuijian-->
+           <div class="w950" style="height:66px;">
+        </div>
+        
+        <div class="w950" style="height:330px; color:#FFF;">
+        <a href="http://epandafans.tsichuan.com:8080" style="width:950px; height:330px; background:#000; position:absolute;" class="bg_opacity" target="_blank"></a>
+        </div>
+            <div class="w950" style="height:66px;">
+        </div>
+        
+        <div class="w950" style="height:330px; color:#FFF;">
+        <a href="http://global.tsichuan.com/home/explore/index/5/0" style="width:950px; height:330px; background:#000; position:absolute;" class="bg_opacity" target="_blank"></a>
+        </div>
+            <div class="w950" style="height:66px;">
+        </div>
+        
+        <div class="w950" style="height:330px; color:#FFF;">
+        <a href="http://global.tsichuan.com/home/explore/info/92/92/4" style="width:950px; height:330px; background:#000; position:absolute;" class="bg_opacity" target="_blank"></a>
+        </div>
+            <div class="w950" style="height:66px;">
+        </div>
+        
+        <div class="w950" style="height:330px; color:#FFF;">
+        <a href="http://global.tsichuan.com/home/line/info/74/74/20" style="width:950px; height:330px; background:#000; position:absolute;" class="bg_opacity" target="_blank"></a>
+        </div>
+        <!--tuijian end-->
+     <!--places-->
+    <div id="places_box">
+    	<a href="/home/explore/index" class="more"></a>
+    	<h1>Sichuan Basin</h1>
+            
+                                    <div class="pic_1">
+                                    <img src="http://global.tsichuan.com/uploads/shouye/13880477974mQeF.jpg" alt="">
+                    <div class="info"><strong>Jinli</strong><br><br>Teahouses, hotels, restaurants, local snacks, and other local specialties are all refined with western Sichuan-style pleasures and charms.</div>
+                    <a href="/home/explore/info/94/94/4">Jinli</a>
+                 </div>
+
+            
+                                    <div class="pic_1">
+                                    <img src="http://global.tsichuan.com/uploads/shouye/1388048047UjRvg.jpg" alt="">
+                    <div class="info"><strong>Sanxingdui Museum</strong><br><br>The site is known as one of the greatest archaeological discoveries of the 20th century.</div>
+                    <a href="/home/explore/info/98/98/4">Sanxingdui Museum</a>
+                 </div>
+
+            
+                                     <div class="pic_2">
+                                    <img src="http://global.tsichuan.com/uploads/shouye/13880636946mmcI.jpg" alt="">
+                    <div class="info"><strong>Langzhong Ancient Town</strong><br><br>It’s architectural styles represent ancient Chinese residential philosophy.</div>
+                    <a href="/home/explore/info/100/100/4">Langzhong Ancient Town</a>
+                 </div>
+
+                    
+        <div style="width: 100%; height: 20px; float: left;"></div>
+        <a href="/home/explore/index/5/0" class="more"></a>
+    	<h1>Plateau in western Sichuan</h1>
+    	                                        <div class="pic_2">
+                                    <img src="http://global.tsichuan.com/uploads/shouye/1388049021vDUkA.jpg" alt="">
+                    <div class="info"><strong>Daocheng Yading</strong><br><br>For overseas travelers, it’s known as the “last pure land on the Blue Planet”.</div>
+                    <a href="/home/explore/info/46/46/5">Daocheng Yading</a>
+                </div>
+                                               <div class="pic_1">
+                                    <img src="http://global.tsichuan.com/uploads/shouye/1388049226TcRn5.jpg" alt="">
+                    <div class="info"><strong>Hailuogou Minya Konka</strong><br><br>The Hailuogou National Geological Park has modern glaciers, hot springs, and mountainous canyons.</div>
+                    <a href="/home/explore/info/103/103/5">Hailuogou Minya Konka</a>
+                </div>
+                                               <div class="pic_1">
+                                    <img src="http://global.tsichuan.com/uploads/shouye/13880484017tKkj.jpg" alt="">
+                    <div class="info"><strong>Lugu Lake</strong><br><br>On this beautiful and magical land, you can find tribal and ancient traditions everywhere.</div>
+                    <a href="/home/explore/info/106/106/5">Lugu Lake</a>
+                </div>
+               </div>
+    <!--places end-->
+    
+    <!--4格-->
+    <div style="width:100%; height:421px; color:#FFF; font-size:12px;">
+    	<div id="4ge">
+        	Loading...
+        </div>
+    </div>
+    <!--4格 end-->
+    
+    <!--tourism-->
+    <div class="w950" style="height:66px;">
+    </div>
+    <div id="map_back" style=" height:380px; width:950px;">
+    
+    	<div id="map_bg">
+        	<div style="background:#000; width:950px; height:380px; background:url(http://global.tsichuan.com/images/ditu/en/01-Frankfurt.png) no-repeat; position:absolute;" id="div_map1"></div>
+            <div style="background:#000; width:950px; height:380px; background:url(http://global.tsichuan.com/images/ditu/en/03-Doha.png) no-repeat; position:absolute;" id="div_map3"></div>
+            <div style="background:#000; width:950px; height:380px; background:url(http://global.tsichuan.com/images/ditu/en/04-Melbourne.png) no-repeat; position:absolute;" id="div_map4"></div>
+            <div style="background:#000; width:950px; height:380px; background:url(http://global.tsichuan.com/images/ditu/en/05-Kathmandu.png) no-repeat; position:absolute;" id="div_map5"></div>
+            <div style="background:#000; width:950px; height:380px; background:url(http://global.tsichuan.com/images/ditu/en/07-Phuket.png) no-repeat; position:absolute;" id="div_map7"></div>
+            <div style="background:#000; width:950px; height:380px; background:url(http://global.tsichuan.com/images/ditu/en/11-Kaohsiung.png) no-repeat; position:absolute;" id="div_map11"></div>
+            <div style="background:#000; width:950px; height:380px; background:url(http://global.tsichuan.com/images/ditu/en/13-Taipei.png) no-repeat; position:absolute;" id="div_map13"></div>
+            <div style="background:#000; width:950px; height:380px; background:url(http://global.tsichuan.com/images/ditu/en/15-Tokyo.png) no-repeat; position:absolute;" id="div_map15"></div>
+            <div style="background:#000; width:950px; height:380px; background:url(http://global.tsichuan.com/images/ditu/en/16-Seoul.png) no-repeat; position:absolute;" id="div_map16"></div>
+            <div style="background:#000; width:950px; height:380px; background:url(http://global.tsichuan.com/images/ditu/en/17-HongKong.png) no-repeat; position:absolute;" id="div_map17"></div>
+            <div style="background:#000; width:950px; height:380px; background:url(http://global.tsichuan.com/images/ditu/en/18-Macao.png) no-repeat; position:absolute;" id="div_map18"></div>
+            <div style="background:#000; width:950px; height:380px; background:url(http://global.tsichuan.com/images/ditu/en/19-Hanoi.png) no-repeat; position:absolute;" id="div_map19"></div>
+            <div style="background:#000; width:950px; height:380px; background:url(http://global.tsichuan.com/images/ditu/en/20-Bangkok.png) no-repeat; position:absolute;" id="div_map20"></div>
+            <div style="background:#000; width:950px; height:380px; background:url(http://global.tsichuan.com/images/ditu/en/21-KualaLumpur.png) no-repeat; position:absolute;" id="div_map21"></div>
+            <div style="background:#000; width:950px; height:380px; background:url(http://global.tsichuan.com/images/ditu/en/22-Singapore.png) no-repeat; position:absolute;" id="div_map22"></div>
+            <div style="background:#000; width:950px; height:380px; background:url(http://global.tsichuan.com/images/ditu/en/24-Mumbai.png) no-repeat; position:absolute;" id="div_map24"></div>
+            <div style="background:#000; width:950px; height:380px; background:url(http://global.tsichuan.com/images/ditu/en/25-AbuDhabi.png) no-repeat; position:absolute;" id="div_map25"></div>
+            <div style="background:#000; width:950px; height:380px; background:url(http://global.tsichuan.com/images/ditu/en/26-Karachi.png) no-repeat; position:absolute;" id="div_map26"></div>
+            <div style="background:#000; width:950px; height:380px; background:url(http://global.tsichuan.com/images/ditu/en/27-Amsterdam.png) no-repeat; position:absolute;" id="div_map27"></div>
+            <div style="background:#000; width:950px; height:380px; background:url(http://global.tsichuan.com/images/ditu/en/55-Male.png) no-repeat; position:absolute;" id="div_map55"></div>
+            <div style="background:#000; width:950px; height:380px; background:url(http://global.tsichuan.com/images/ditu/en/10-London.png) no-repeat; position:absolute;" id="div_map10"></div>
+			<div style="background:#000; width:950px; height:380px; background:url(http://global.tsichuan.com/images/ditu/en/08-HoChiMinh.png) no-repeat; position:absolute;" id="div_map8"></div>
+			<div style="background:#000; width:950px; height:380px; background:url(http://global.tsichuan.com/images/ditu/en/09-Nagoya.png) no-repeat; position:absolute;" id="div_map9"></div>
+			<div style="background:#000; width:950px; height:380px; background:url(http://global.tsichuan.com/images/ditu/en/28-Vancouver.png) no-repeat; position:absolute;" id="div_map28"></div>
+			<div style="background:#000; width:950px; height:380px; background:url(http://global.tsichuan.com/images/ditu/en/56-Hiroshima.png) no-repeat; position:absolute;" id="div_map56"></div>
+			<div style="background:#000; width:950px; height:380px; background:url(http://global.tsichuan.com/images/ditu/en/57-JejuIsland.png) no-repeat; position:absolute;" id="div_map57"></div>
+			<div style="background:#000; width:950px; height:380px; background:url(http://global.tsichuan.com/images/ditu/en/58-Sydney.png) no-repeat; position:absolute;" id="div_map58"></div>
+			<div style="background:#000; width:950px; height:380px; background:url(http://global.tsichuan.com/images/ditu/en/59-SanFrancisco.png) no-repeat; position:absolute;" id="div_map59"></div>
+			<div style="background:#000; width:950px; height:380px; background:url(http://global.tsichuan.com/images/ditu/en/60-Saipan.png) no-repeat; position:absolute;" id="div_map60"></div>
+			<div style="background:#000; width:950px; height:380px; background:url(http://global.tsichuan.com/images/ditu/en/61-Yangon.png) no-repeat; position:absolute;" id="div_map61"></div>
+        </div>
+        
+    	<div style="position:absolute; width:235px; height:430px; background:#299495; margin:0px 0 0 745px;">
+        <div style="background:#FFF; width:215px; height:30px; margin:5px; padding-left:10px; color:#666; font-size:14px; line-height:30px;" id="map_name">London</div>
+        <div style="background:#217778; width:100%; height:2px;"></div>
+        <div style="background:#248384; width:100%; height:1px;"></div>
+        <style type="text/css">
+			#map_list li{padding: 0 0 0 18px;}
+		</style>
+         <ul id="map_list" >
+            <li id="map27">Amsterdam</li>
+            <li id="map25">Abu Dhabi</li>
+            <li id="map20">Bangkok</li>
+            <li id="map3">Doha</li>
+        	<li id="map1">Frankfurt</li>
+            <li id="map17">Hong Kong</li>
+            <li id="map19">Hanoi</li>
+			<li id="map8">Ho Chi Minh</li>
+			<li id="map56">Hiroshima</li>
+			<li id="map57">Jeju Island</li>
+            <li id="map21">Kuala Lumpur</li>
+            <li id="map26">Karachi</li>
+            <li id="map5">Kathmandu</li>
+            <li id="map11">Kaohsiung</li>
+            <li id="map10">London</li>
+            <li id="map18">Macao</li>
+            <li id="map24">Mumbai</li>
+            <li id="map4">Melbourne</li>
+			<li id="map55">Male</li> 
+			<li id="map9">Nagoya</li>
+            <li id="map7">Phuket</li>
+            <li id="map16">Seoul</li>
+            <li id="map22">Singapore</li>
+			<li id="map58">Sydney</li>
+			<li style="width:98px;" id="map59">San Francisco</li>
+			<li id="map60">Saipan</li>
+            <li id="map13">Taipei</li>
+            <li id="map15">Tokyo</li>  
+			<li id="map28">Vancouver</li>
+			<li id="map61">Yangon</li>
+        </ul>
+        
+        </div>
+    </div>
+    <!--tourism end-->
+    
+    <!--bottom-->
+    <div id="bottom" style="width:950px;">
+        <div style="background:url(http://global.tsichuan.com/images/home/en_index_bottom_btn.png); width:487px; height:69px; margin:130px auto 0 auto;">  
+        	<a href="http://global.tsichuan.com/home/walk/info/15" style="float:left; width:50px; height:66px;"></a>
+            <a href="http://global.tsichuan.com/home/walk/angcy" style="float:left; width:50px; height:66px; margin-left:95px;"></a>
+            <a href="http://global.tsichuan.com/home/walk/info/25" style="float:left; width:50px; height:66px; margin-left:95px;"></a>
+            <a href="http://global.tsichuan.com/home/walk/tieshi" style="float:left; width:50px; height:66px; margin-left:95px;"></a>
+        </div>
+        
+        <div style="width:950px; height:50px; margin:255px 0 0 0;">
+        	<a href="https://itunes.apple.com/app/tsichuan/id880519808" target="_blank" style="width:170px; height:48px; float:left;"></a>
+            <a href="http://goo.gl/CJ9cbZ" target="_blank" style="width:170px; height:48px; float:left; margin:0 0 0 62px;"></a>
+        </div>
+        
+    </div>
+    <!--bottom end-->
+       
+</div></div>
+<!--content end-->
+
+<!--拼接背景-->
+<div id="bg_div">
+			<div style="background:url(http://global.tsichuan.com/uploads/shouye/1387878909PKaQr.jpg) top center; width:100%; height:849px;" id="top_bg"></div>
+	    <div style="background:#0B7A81; width:100%; height:100px;"></div>
+            <div style="background:url(http://global.tsichuan.com/uploads/shouye/1418617383anQNv.jpg) top center; width:100%; height:400px;"></div>
+            <div style="background:url(http://global.tsichuan.com/uploads/shouye/1387435207UWdJB.jpg) top center; width:100%; height:400px;"></div>
+            <div style="background:url(http://global.tsichuan.com/uploads/shouye/1387436973bTvwU.jpg) top center; width:100%; height:400px;"></div>
+            <div style="background:url(http://global.tsichuan.com/uploads/shouye/1387943135dqS1S.jpg) top center; width:100%; height:400px;"></div>
+    	<div style="background:url(http://global.tsichuan.com/images/home/en_index_bg1_7.jpg) top center; width:100%; height:825px;"></div>
+    <div style="background:url(http://global.tsichuan.com/images/home/en_index_bg1_8.jpg) top center; width:100%; height:421px;"></div>
+    <div style="background:#fff; width:100%; height:550px;"></div>
+    <div style="background:url(http://global.tsichuan.com/images/home/en_index_bg6.jpg) repeat-x bottom #008081; width:100%; height:451px;"></div>
+</div>
+<!--拼接背景 end-->
+
+<!--footer-->
+<!--#content.height === #footer.top-->
+		<div class="footer-touch">
+        <div class="footer-wraper clearfloat">
+            <div style=" float:left; width:950px; margin:85px 0 0 0;">
+                <div style="float:left; width:750px; height:150px; font-size:13px; color:#808080; line-height:150%"> Located in the upper reaches of the Yangtze River, Sichuan, China's fifth largest province, has an area of 485,000 square kilometers and a population of more than 87.5 million. The terrain and relief of the province descend from west to east, and are bowl-shaped. This contributes to a varied natural environment and unique landscapes and makes the province a highly popular travel destination.</div>
+                <a href="http://www.youtube.com/sichuan" target="_blank"><div style="float:left; background:url(http://global.tsichuan.com/uploads/shouye/13876937134FTmk.png) no-repeat; width:150px; height:150px; margin:0 0 0 30px;"></div></a>
+            </div>
+            <img src="http://global.tsichuan.com/uploads/shouye/1387693693Mq3d4.png" border="0" width="950" height="145" border="0" usemap="#footer-touchMap" />
+            <map name="footer-touchMap" id="footer-touchMap">
+                <area shape="rect" coords="162,34,248,110" href="http://www.youtube.com/sichuan" target="_blank" />
+                <area shape="rect" coords="285,34,366,112" href="" target="_blank" />
+                <area shape="rect" coords="403,32,485,112" href="" target="_blank" />
+                <area shape="rect" coords="521,32,603,112" href="" target="_blank" />
+                <area shape="rect" coords="640,32,723,112" href="" target="_blank" />
+                <area shape="rect" coords="756,30,845,113" href="http://weibo.com/sichuanlvyou" target="_blank" />
+                <area shape="rect" coords="877,33,957,113" href="http://t.qq.com/sc-travel" target="_blank" />
+            </map>
+        </div>
+    </div>
+    <div class="footer-links">
+        <div class="footer-wraper clearfloat">			
+			<dl>
+				<dt><a style="color:#808080;" href="http://global.tsichuan.com/home/know/index">About Sichuan</a></dt>
+				<dd><a href="http://global.tsichuan.com/home/know/about">Overview</a></dd>
+				<dd><a href="http://global.tsichuan.com/home/know/index">Sichuan Icons</a></dd>
+				<dd><a href="http://global.tsichuan.com/home/know/tuying">Sichuan Videos</a></dd>
+			</dl>
+			
+            <dl>
+				<dt><a style="color:#808080;" href="http://global.tsichuan.com/home/explore/index">Explore Sichuan</a></dt>
+				<dd><a href="http://global.tsichuan.com/home/explore/index">Sichuan Basin</a></dd>
+				<dd><a href="http://global.tsichuan.com/home/explore/index/5/0">Plateau in western Sichuan</a></dd>
+            </dl>
+            <dl>
+				<dt><a style="color:#808080;" href="http://global.tsichuan.com/home/line/index">Theme Routes</a></dt>
+				<dd><a href="http://global.tsichuan.com/home/line/index">World Natural and Cultural Heritage Sites Tour</a></dd> 
+				<dd><a href="http://global.tsichuan.com/home/line/index">Mystery Tour</a></dd> 
+				<dd><a href="http://global.tsichuan.com/home/line/index">Challenge Tours</a></dd> 
+				<dd><a href="http://global.tsichuan.com/home/line/index">South Sichuan Tour</a></dd> 
+				<dd><a href="http://global.tsichuan.com/home/line/index">Cuisine Tours</a></dd> 
+				<dd><a href="http://global.tsichuan.com/home/line/index">Cultural Tours</a></dd> 
+				<dd><a href="http://global.tsichuan.com/home/line/index">Urban Tour</a></dd> 
+				<dd><a href="http://global.tsichuan.com/home/line/index">Ancient Town Tour</a></dd> 
+            </dl>
+            <dl>
+				<dt><a style="color:#808080;" href="http://global.tsichuan.com/home/walk/index">Go To Sichuan</a></dt>
+				<dd><a href="http://global.tsichuan.com/home/walk/info/15">Transport</a></dd> 
+				<dd><a href="http://global.tsichuan.com/home/walk/angcy">Travel Agencies</a></dd> 
+				<dd><a href="http://global.tsichuan.com/home/walk/info/25">Accommodation</a></dd> 
+				<dd><a href="http://global.tsichuan.com/home/walk/tieshi">Advice and Information</a></dd> 
+            </dl>
+            <dl>
+				<dt><a style="color:#808080;" href="http://global.tsichuan.com/home/activity/index">Promotions</a></dt>
+				<dd><a href="http://global.tsichuan.com/home/activity/info/27">Yi Torch Festival</a></dd> 
+				<dd><a href="http://global.tsichuan.com/home/activity/info/28">Leshan Giant Buddha Tourism Culture Festival</a></dd> 
+				<dd><a href="http://global.tsichuan.com/home/activity/info/29">Dujiang Dam Water Festival</a></dd> 
+				<dd><a href="http://global.tsichuan.com/home/activity/info/30">Hongyuan Yak Cultural Festival</a></dd> 
+            </dl>
+            <dl class="last">
+                <dt>Contact us</dt>
+                <dd><a href="#">Information Line: (86)12301</a></dd>
+                <dd><a href="#">Complaint Line: (86）96927</a></dd>
+                <dd><a href="#">Add.: No.2, (by Anshun Bridge) Upper Qinglian Street, Chengdu, Sichuan</a></dd>
+            </dl>
+        </div>
+        <div class="footer-wraper clearfloat">
+            <p class="copyRight">Copyright © 2013 scta.gov.cn 版权所有：四川省旅游局 备案序号蜀ICP备10002377号</p>
+            <p class="copyRight">
+				Created by APEXOgilvy
+				<span style="display:none;">
+					<script type="text/javascript">
+						//百度统计
+						var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+						document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fc2632661dc47131d4a83b15caf7c7eb6' type='text/javascript'%3E%3C/script%3E"));
+					</script>
+				</span>
+			</p>
+        </div>
+    </div>
+<!--footer end-->
+<span style="height:20px;background:#A1A1A1;width:100%;float:left;margin-top:-20px;"></span>
+<!--top_btn-->
+
+<script src="http://global.tsichuan.com/js/scrollTo.js"></script>
+<div id="back-to-top" onclick="javascript:tops('index_box');return false;"></div>
+
+<!--信息浮层box-->
+<div class="login_box">
+	<div class="box_close"><a href="#"></a></div>
+	<form action="http://global.tsichuan.com/index.php" method="post" accept-charset="utf-8" id="loginss"><div style="display:none">
+<input type="hidden" name="TRAVEL" value="a09588a6daf0b64ec7a469dee6f929eb" />
+</div>		<table style="width:400px;float:left;margin:20px 0 0 30px;" class="table-condensed" cellpadding="6" cellspacing="0" border="0">
+			<caption style="margin-bottom:10px"><h3>Login Sichuan</h3></caption>
+			<tr>
+				<td align="right">Username：</td>
+				<td align="left"><input type="text" name="loginname" placeholder="Username"></td>
+			</tr>
+			<tr>
+				<td align="right">Password：</td>
+				<td align="left"><input type="password" name="password" placeholder="Password"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<button type="button" class="btn btn-primary" onclick="javascript:login();">Login</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+	<span style="border-left:1px solid #ccc;height:220px;weight:1px;float:left;margin-left:5px;"></span>
+
+		<table style="width:400px;float:right;" class="table-condensed" cellpadding="6" cellspacing="0" border="0">
+			<caption style="margin-bottom:10px"><h3>Join Sichuan</h3></caption>
+			<tr>
+				<td align="right">Username：</td>
+				<td align="left"><input type="text" name="usernname" placeholder="Username"/></td>
+			</tr>
+			<tr>
+				<td align="right">Password：</td>
+				<td align="left"><input type="password" name="passwords" placeholder="Password"></td>
+			</tr>
+			<tr>
+				<td align="right">Confirm Password：</td>
+				<td align="left"><input type="password" name="confpassword" placeholder="Confirm Password"/></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<button type="button" onclick="javascript:join()" class="btn btn-primary" >Join</button>
+				</td>
+			</tr>
+		</table>
+</div>
+<!--信息浮层box end-->
+<!--mini导航-->
+<style>
+
+</style>
+<div style="background:#000; position:fixed; top:0px; z-index:999; width:100%; height:50px; display:none; filter:alpha(Opacity=90);-moz-opacity:0.9;opacity:0.9;" id="mini_nav">
+<div style="width:950px; height:50px; margin:0 auto;">
+<a href="http://global.tsichuan.com/home/know/index" style="background:#7f1973;">About Sichuan</a>
+<a href="http://global.tsichuan.com/home/explore/index" style="background:#078083;">Explore Sichuan</a>
+<a href="http://global.tsichuan.com/home/line/index" style="background:#8a8006;">Theme Routes</a>
+<a href="http://global.tsichuan.com/home/walk/index" style="background:#018035;">Go To Sichuan</a>
+<a href="http://global.tsichuan.com/home/activity/index" style="background:#c8421e;">Promotions</a>
+</div>
+</div>
+<!--mini导航end-->
+
+<!--视频弹窗-->
+<div class="video_box">
+<div class="box_close"><a href="javascript:"></a></div>
+
+	<!-- 播放器 -->
+	<div id="mediaplayer">login</div>
+	
+	<script type="text/javascript">
+		jwplayer("mediaplayer").setup({
+			flashplayer: "/player/player.swf",
+			//file: "http://global.tsichuan.com/cysp141105.mp4",uploads/tuying/shipin/cysp14110501.mp4
+            file: "http://global.tsichuan.com/uploads/tuying/shipin/cysp14110501.mp4",
+            //file: "http://global.tsichuan.com/uploads/tuying/shipin/1389591647gp1Bx.mp4",
+			image: "/player/amazing_sichuan.jpg",
+			width:"640",
+			height:"360"
+		});
+	</script>
+    <!-- 播放器 end -->
+</div>
+<div id="box_bg" style="position:fixed; background:url(/images/home/bg_60.png); z-index:9998; display:none; top:0; left:0;"></div>
+<!--视频弹窗 end-->
+
+
+<!--语言浮层-->
+<div class="lang">
+    <ul>
+    <li><a href="http://global.tsichuan.com/home/language/english">ENGLISH</a></li>
+    <li><a href="http://global.tsichuan.com/home/language/french">FRANÇAIS</a></li>
+    <li><a href="http://global.tsichuan.com/home/language/spanish">ESPA OL</a></li>
+    <li><a href="http://global.tsichuan.com/home/language/ru">PYCCKИЙЯЗЫК</a></li>
+    <li><a href="http://global.tsichuan.com/home/language/german">DEUTSCH</a></li>
+    <li><a href="http://global.tsichuan.com/home/language/japanese?url=/">にほんご</a></li>
+    <li><a href="http://global.tsichuan.com/home/language/korean">한국어</a></li>
+    <li><a href="http://global.tsichuan.com/home/language/traditional?url=/">繁体中文</a></li>
+    <li><a href="http://www.tsichuan.com/">简体中文</a></li>
+</ul>
+</div>
+<!--语言浮层 end-->
+<script src="http://global.tsichuan.com/js/swfobject.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+      var flashvars = {navID:"1",subID:"",dataPath:"/xml/nav.xml"};
+      var params = {bgcolor:"#333333",wmode:"transparent"};
+	  swfobject.embedSWF("/images/home/en_banner.swf", "4ge", "950", "420", "10.0.0", "", "", params);
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 978396718;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/978396718/?value=0&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+</body>
+</html>
