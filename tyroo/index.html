@@ -1,0 +1,748 @@
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+
+    <!-- Stylesheets
+    ============================================= -->
+    <base href="//www.tyroo.com"/>
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="css/dark.css" type="text/css" />
+    <link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+    <link rel="stylesheet" href="css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+
+    <link rel="stylesheet" href="css/responsive.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!--[if lt IE 9]>
+    	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+<link rel="stylesheet" href="css/colors.css" type="text/css" />
+
+
+    <!-- External JavaScripts
+    ============================================= -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+    
+
+    <!-- Document Title
+    ============================================= -->
+    <style>.heading-block:after { border-color:#fff;}</style>
+    
+    <link rel="icon" type="image/x-icon" href="myfav.ico" />
+    <title>Tyroo</title>
+    
+    <script>
+function myFunction() {
+data-lightbox="image-1"
+}
+</script>
+
+</head>
+
+<body class="stretched" onload="myFunction()">
+
+
+    <!-- Document Wrapper
+    ============================================= -->
+    <div id="wrapper" class="clearfix">
+
+        <!-- Header
+        ============================================= -->
+        <header id="header" class="transparent-header full-header" data-sticky-class="not-dark">
+
+            <div id="header-wrap">
+
+                <div class="container clearfix">
+
+                    <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+                    <!-- Logo
+                    ============================================= -->
+                    <div id="logo">
+                        <a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/logo.png" alt="tyroo"></a>
+                        <a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="images/logo@2x.png" alt="tyroo"></a>
+                    </div><!-- #logo end -->
+
+                    <!-- Primary Navigation
+                    ============================================= -->
+                    <nav id="primary-menu" class="dark">
+
+                        <ul>
+                            <li class="current"><a href="index.html"><div>Home</div></a>
+                                
+                            </li>
+                            <li><a href="nativetarget.html"><div>Native Target SDK</div></a>
+                                
+                            </li>
+                            <li><a href="remarketing.html">Remarketing</a> </li>
+                                
+                           
+                            <li><a href="aboutus.html">About US</a>
+                               
+                            </li>
+                            <li><a href="careers.html">Careers</a>
+                               
+                            </li>
+                            <li><a href="http://tyroo.com/blog">Blog</a>
+                                
+                            </li>
+                            <li><a href="contactus.html">Contact Us</a>
+                                
+                            </li>
+                            
+                            <li><a href="http://www.tyroocentral.com/" class="button button-3d button-rounded button-blue btntp"><i class="icon-user"></i> Login</a>
+                             
+                            </li>
+                            
+                            <li><a href="http://www.tyroocentral.com/www/admin/publisher-add.php"><i class="icon-align-justify"></i> Signup</a>
+                             
+                            </li>
+                            
+                            
+                        </ul>
+
+                   
+
+                    </nav><!-- #primary-menu end -->
+
+                </div>
+
+            </div>
+
+        </header><!-- #header end -->
+
+        <section id="slider" class="slider-parallax swiper_wrapper full-screen clearfix">
+
+            <div class="swiper-container swiper-parent">
+                <div class="swiper-wrapper">
+                 
+                    <div class="swiper-slide dark" style="background-image: url('images/bg2.jpg'); background-position: center top;">
+                        <div class="container clearfix">
+                        
+                         <div class="hide-m">
+                                <img src="images/a2.png"  data-animate="fadeInUp" data-delay="100" alt="Chrome">
+                            </div>
+                            <div class="slider-caption">
+                                <h2 data-caption-animate="fadeInUp">Leading Global Mobile Advertising Technology platform</h2>
+                                <p data-caption-animate="fadeInUp" data-caption-delay="200">Serving over 270 billion impressions and over 55 million engagements, we stand as one of the leading global mobile advertising technology company to deliver higher eCPMs for our publisher partners.</p>
+                            </div> 
+                           
+                        </div>
+                        
+                        
+                         <div class="slider-caption slider-caption-right">
+
+                            <div>
+                                <img src="images/a2.png"  data-animate="fadeInUp" data-delay="100" >
+                            </div>
+
+                        </div>
+                            
+                            
+                     <!--   <div class="video-overlay" style="background-color: rgba(255,255,255,0.33);"></div> -->
+                    </div>
+                </div>
+                <!--<div id="slider-arrow-left"><i class="icon-angle-left"></i></div>
+                <div id="slider-arrow-right"><i class="icon-angle-right"></i></div>-->
+            </div>
+
+            <script>
+                jQuery(document).ready(function($){
+                    var swiperSlider = new Swiper('.swiper-parent',{
+                        paginationClickable: false,
+                        slidesPerView: 1,
+                        grabCursor: false,
+                        loop: false,
+                        onSwiperCreated: function(swiper){
+                            $('[data-caption-animate]').each(function(){
+                                var $toAnimateElement = $(this);
+                                var toAnimateDelay = $(this).attr('data-caption-delay');
+                                var toAnimateDelayTime = 0;
+                                if( toAnimateDelay ) { toAnimateDelayTime = Number( toAnimateDelay ) + 750; } else { toAnimateDelayTime = 750; }
+                                if( !$toAnimateElement.hasClass('animated') ) {
+                                    $toAnimateElement.addClass('not-animated');
+                                    var elementAnimation = $toAnimateElement.attr('data-caption-animate');
+                                    setTimeout(function() {
+                                        $toAnimateElement.removeClass('not-animated').addClass( elementAnimation + ' animated');
+                                    }, toAnimateDelayTime);
+                                }
+                            });
+                            SEMICOLON.slider.swiperSliderMenu();
+                        },
+                        onSlideChangeStart: function(swiper){
+                            $('[data-caption-animate]').each(function(){
+                                var $toAnimateElement = $(this);
+                                var elementAnimation = $toAnimateElement.attr('data-caption-animate');
+                                $toAnimateElement.removeClass('animated').removeClass(elementAnimation).addClass('not-animated');
+                            });
+                            SEMICOLON.slider.swiperSliderMenu();
+                        },
+                        onSlideChangeEnd: function(swiper){
+                            $('#slider .swiper-slide').each(function(){
+                                if($(this).find('video').length > 0) { $(this).find('video').get(0).pause(); }
+                            });
+                            $('#slider .swiper-slide:not(".swiper-slide-active")').each(function(){
+                                if($(this).find('video').length > 0) {
+                                    if($(this).find('video').get(0).currentTime != 0 ) $(this).find('video').get(0).currentTime = 0;
+                                }
+                            });
+                            if( $('#slider .swiper-slide.swiper-slide-active').find('video').length > 0 ) { $('#slider .swiper-slide.swiper-slide-active').find('video').get(0).play(); }
+
+                            $('#slider .swiper-slide.swiper-slide-active [data-caption-animate]').each(function(){
+                                var $toAnimateElement = $(this);
+                                var toAnimateDelay = $(this).attr('data-caption-delay');
+                                var toAnimateDelayTime = 0;
+                                if( toAnimateDelay ) { toAnimateDelayTime = Number( toAnimateDelay ) + 300; } else { toAnimateDelayTime = 300; }
+                                if( !$toAnimateElement.hasClass('animated') ) {
+                                    $toAnimateElement.addClass('not-animated');
+                                    var elementAnimation = $toAnimateElement.attr('data-caption-animate');
+                                    setTimeout(function() {
+                                        $toAnimateElement.removeClass('not-animated').addClass( elementAnimation + ' animated');
+                                    }, toAnimateDelayTime);
+                                }
+                            });
+                        }
+                    });
+
+                    $('#slider-arrow-left').on('click', function(e){
+                        e.preventDefault();
+                        swiperSlider.swipePrev();
+                    });
+
+                    $('#slider-arrow-right').on('click', function(e){
+                        e.preventDefault();
+                        swiperSlider.swipeNext();
+                    });
+                });
+            </script>
+
+        </section>
+
+        <!-- Content
+        ============================================= -->
+      <section id="content">
+
+        <div class="content-wrap nobottommargin nobottompadding" style="padding:0;">
+
+                <div class="section nobottommargin notopmargin" style="background-color:#fff; ">
+                <div class="container clearfix" ><!--style="background-image: url(images/bgk.png);"-->
+                    <div class="row clearfix">
+						
+                        <div class="col-lg-6">
+                        
+                            <div class="heading-block topmargin">
+                                <h1>Native Target SDK</h1><span> Maximize your apps’ monetization</span>
+                            </div>
+                            <p>Native Target delivers maximized monetization solution that empowers you to get the best ROI, user engagement and higher performance from your app. Find the right and best in class ad formats to deliver great results.</p>
+                        <a href="nativetarget.html" class="button button-3d button-rounded button-green">Learn more</a></div>
+                        
+                        <div class="col-lg-6">
+
+                            <div style="position: relative; margin-bottom: -60px;" class="ohidden" data-height-lg="449" data-height-md="567" data-height-sm="470" data-height-xs="687" data-height-xxs="183">
+                                 
+                                 <img src="images/services/native.png"  data-animate="fadeInUp" data-delay="100" class="ntimage1">
+                                <img src="images/services/native2.png"  data-animate="fadeInRight" data-delay="400" class="ntimage2" >
+                               
+                          </div>
+                           
+
+                        
+
+                        </div>
+
+                    </div>
+                </div>
+                </div>
+                
+                
+                <div class="section clearfix notopmargin nobottommargin nobottompadding"  style="background-color:#348cb8; background-image: url(images/bgrm.jpg); background-size: cover;" >
+                
+ <div class="container clearfix topmargin-sm" >
+                    <div class="col_one_third nobottommargin-sm nobottompadding center">
+                    <img data-animate="fadeInLeft" src="images/b.png" data-delay="100" >
+                    <img data-animate="fadeInLeft"   src="images/b2.png" data-delay="300" style="margin-top: -158px;">
+                    </div>
+
+                    <div class="col_half col_last">
+
+                        <div class="heading-block white">
+                            <h3 class="white">Re-marketing </h3><span class="white"> They way ahead for E-commerce Business</span>
+                        </div>
+
+                        <p class="white">Our mobile focused “re-marketing” solution is helping re-engage visitors on mobile apps and mobile web. It uses real time bidding and programmatic solutions on leading global mobile advertising supply partners to track your mobile app or mobile web visitors.</p>
+
+
+                        <a class="button button-3d button-rounded button-green" href="remarketing.html">Learn more</a>
+
+                    </div></div>
+
+                </div>
+
+
+<a class="button button-full button-dark-blue center tright " href="aboutus.html">
+                    <div class="container clearfix" style="z-index:10;"><h2>100% Fill rate with highest eCPM for audiences across Emerging Markets </h2> </div>
+              <div class="video-overlay" style="background-color:#013356;"></div></a>
+              
+             
+             
+              <div class="container clearfix topmargin ">
+<div class="title-center">
+                        <h2> Our Marquee clients</h2>
+  
+  
+  </div>
+                   <div id="oc-clients" class="owl-carousel image-carousel">
+
+                        <div class="oc-item"><a href="#"><img src="images/clients/1.png" alt="Clients"></a></div>
+                        <div class="oc-item"><a href="#"><img src="images/clients/2.png" alt="Clients"></a></div>
+                        <div class="oc-item"><a href="#"><img src="images/clients/3.png" alt="Clients"></a></div>
+                        <div class="oc-item"><a href="#"><img src="images/clients/4.png" alt="Clients"></a></div>
+                        <div class="oc-item"><a href="#"><img src="images/clients/5.png" alt="Clients"></a></div>
+                        <div class="oc-item"><a href="#"><img src="images/clients/6.png" alt="Clients"></a></div>
+                        <div class="oc-item"><a href="#"><img src="images/clients/7.png" alt="Clients"></a></div>
+                        <div class="oc-item"><a href="#"><img src="images/clients/8.png" alt="Clients"></a></div>
+                        <div class="oc-item"><a href="#"><img src="images/clients/9.png" alt="Clients"></a></div>
+                        <div class="oc-item"><a href="#"><img src="images/clients/10.png" alt="Clients"></a></div>
+                        <div class="oc-item"><a href="#"><img src="images/clients/11.png" alt="Clients"></a></div>
+                        <div class="oc-item"><a href="#"><img src="images/clients/12.png" alt="Clients"></a></div>
+                        <div class="oc-item"><a href="#"><img src="images/clients/13.png" alt="Clients"></a></div>
+
+                  </div>
+
+                    <script type="text/javascript">
+
+                        jQuery(document).ready(function($) {
+
+                            var ocClients = $("#oc-clients");
+
+                            ocClients.owlCarousel({
+                                margin: 6,
+                                loop: true,
+                                nav: false,
+                                autoplay: true,
+                                dots: false,
+                                autoplayHoverPause: true,
+								autoplayTimeout:1000,
+                                responsive:{
+                                    0:{ items:2 },
+                                    480:{ items:3 },
+                                    768:{ items:4 },
+                                    992:{ items:5 },
+                                    1200:{ items:6 }
+                                }
+                            });
+
+                        });
+
+                    </script>
+
+          </div>
+
+          </div>
+          
+          
+          
+              <div class="section parallax dark nobottommargin" style=" margin-top:0;" data-stellar-background-ratio="0.4">
+                
+
+                    <div class="fslider testimonial testimonial-full" data-animation="fade" data-arrows="false">
+                        <div class="flexslider">
+                            <div class="slider-wrap">
+                                <div class="slide">
+                                    
+                                    <div class="testi-content">
+                                        <p>We’ve been working with Tyroo for half a year now and we’ve been very pleased with the performance of our campaigns. Tyroo is our largest network partner and delivered some great results. Tyroo contributes 15% to our overall affiliate revenue pie. Our association with Tyroo has helped us boost our revenues by 40%. They’ve put us in touch with some great companies who have enabled us to also manage retargeting and APP programs through both CPS models under the monitor of the Tyroo system. We’ve always had a dedicated account manager who works behind the scenes to drive interest in our brands and recruit new affiliate members, while the rest of the affiliate team works to strengthen and support our efforts.</p>
+                                        <div class="testi-meta">
+                                              LU Yin
+                                            <span>Business Development, Ctrip </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slide">
+                                    
+                                    <div class="testi-content">
+                                        <p>Tyroo is one of the largest digital performance channel for Domino's Pizza. Through their efficient and optimized affiliate coupon strategy, Tyroo has managed to drive a growth of 100% in transactions over a period of 6 months (Aug 2012-July 2013). The conversion rates have increased by 80% from Jan’13 to July’13.</p>
+                                        <p>In the last 3 months, we have also used the Tyroo network for promoting our new product launch videos each garnering 1 lakh full-views from the audience. </p>
+                                        <div class="testi-meta">
+                                             Shobhit Tandon
+                                            <span>   Deputy General Manager Marketing, Dominos Pizza India  </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slide">
+                                   
+                                    <div class="testi-content">
+                                        <p>Since the start of our recent partnership with Tyroo, we have seen discernibly higher levels of quality in prospects in the medium of affiliate based acquisitions. Tyroo has been able to provide a 95% success rate in Credit Card applications that we have received</p>
+                                        <div class="testi-meta">
+                                            Shambhavi Kumar
+                                            <span> Assistant Vice President – Marketing,  Citibank India   </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                   
+                                <div class="slide">
+                                   
+                                    <div class="testi-content">
+                                        <p>Tyroo has been the largest affiliate channel for Myntra, contributing over 35% of the overall sales from the affiliate channel. A comprehensive approach helped to not only achieve the set objectives but also surpass them. The conversion rates have always been good which highlights the fact that traffic sources were constantly optimized. New traffic was constantly explored by using mailers on different databases and new websites</p>
+                                        <div class="testi-meta">
+                                            Puneet Bhatia
+                                            <span> Head Affiliate Marketing, Myntra   </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                <div class="slide">
+                                   
+                                    <div class="testi-content">
+                                        <p>When Flipit.com entered the Indian market last year in 2013 with Flipit India, it was our first Asian venture and very different from every other market we were experienced in. Tyroo was one of the first networks we turned to, and thanks to their tremendous help and support, they have helped us partner up with India's largest brands in e-commerce and have contributed to our growing sales and reputation within India as an expanding performance-based marketing firm</p>
+                                        <div class="testi-meta">
+                                            Joanna Jaoudie
+                                            <span> Country Manager, Flipit India   </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                <div class="slide">
+                                   
+                                    <div class="testi-content">
+                                        <p>Tyroo is an excellent network, they consistently and reliably host affiliate programs from some of the very best merchants India has to offer. Their expert knowledge of affiliate programs has effectively enabled us to increase our revenues and satisfy our members. We at Top Cashback India look forward to a long and prosperous relationship with Tyroo!</p>
+                                        <div class="testi-meta">
+                                            Jamie Thompson
+                                            <span> Partnerships Executive, topcashback.com  </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                 <div class="slide">
+                                   
+                                    <div class="testi-content">
+                                        <p>We are continually impressed with how easy it is to work alongside Tyroo. They are always responsive, and send the freshest deals and offers. Their staff is more than happy to answer any questions and extremely helpful. As our first network contact in India, they have truly set the bar high!</p>
+                                        <div class="testi-meta">
+                                            Andrew Crowley
+                                            <span> Merchant Manager, Social Growth Technologies  </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+              </div>
+
+                <div class="section notopmargin notopborder footer-stick">
+                  <div class="container clearfix">
+                       <div class="title-center">
+                        <h2> Meet us</h2>
+  
+  
+  </div>
+                        
+                        
+                         <div class="row topmargin">
+
+                        <div class="col-md-3 col-sm-6 bottommargin">
+                          <div class="ipost clearfix">
+                                <div class="entry-image">
+                                    <a href="#"><img class="image_fade" src="images/magazine/thumb/1.jpg" ></a>
+                                </div>
+                            <div class="entry-title">
+                                    <h3><a href="blog-single.html">Performance Marketing Insight</a></h3>
+                              </div>
+                               <ul class="entry-meta clearfix">
+                                    <li><i class="icon-calendar3"></i> 28-29 October 2014</li>
+                                    <li><a href="blog-single.html#comments"><i class="icon-map-marker"></i> London</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 bottommargin">
+                          <div class="ipost clearfix">
+                                <div class="entry-image">
+                                    <a href="#"><img class="image_fade" src="images/magazine/thumb/2.jpg" ></a>
+                                </div>
+                            <div class="entry-title">
+                                    <h3><a href="blog-single.html">Apps World</a></h3>
+                                </div>
+                                <ul class="entry-meta clearfix">
+                                    <li><i class="icon-calendar3"></i> 12-13 November 2014</li>
+                                    <li><a href="blog-single.html#comments"><i class="icon-map-marker"></i> London</a></li>
+                                </ul>
+                          </div>
+                        </div>
+                        
+                        
+                        <div class="col-md-3 col-sm-6 bottommargin">
+                          <div class="ipost clearfix">
+                                <div class="entry-image">
+                                    <a href="#"><img class="image_fade" src="images/magazine/thumb/4.jpg" ></a>
+                                </div>
+                            <div class="entry-title">
+                                    <h3><a href="blog-single.html">G-Star 2014</a></h3>
+                                </div>
+                                <ul class="entry-meta clearfix">
+                                    <li><i class="icon-calendar3"></i> 20-23 November 2014</li>
+                                    <li><a href="blog-single.html#comments"><i class="icon-map-marker"></i> Korea</a></li>
+                                </ul>
+                          </div>
+                        </div>
+                        
+                        
+
+                        <div class="col-md-3 col-sm-6 bottommargin">
+                          <div class="ipost clearfix">
+                                <div class="entry-image">
+                                    <a href="#"><img class="image_fade" src="images/magazine/thumb/3.jpg" ></a>
+                                </div>
+                            <div class="entry-title">
+                                    <h3><a href="blog-single.html">Mobile World Congress</a></h3>
+                                </div>
+                                <ul class="entry-meta clearfix">
+                                    <li><i class="icon-calendar3"></i> 2-5 March 2015</li>
+                                    <li><a href="blog-single.html#comments"><i class="icon-map-marker"></i> Barcelona</a></li>
+                                </ul>
+                          </div>
+                        </div>
+
+                        
+
+                    </div>
+                        
+                        
+                    </div>
+                </div>
+
+                <!--<div class="container clear-bottommargin clearfix">
+                    <div class="row">
+
+                        <div class="col-md-3 col-sm-6 bottommargin">
+                          <div class="ipost clearfix">
+                                <div class="entry-image">
+                                    <a href="#"><img class="image_fade" src="images/magazine/thumb/1.jpg" alt="Image"></a>
+                                </div>
+                            <div class="entry-title">
+                                    <h3><a href="blog-single.html">Tyroo at GMIC, Bangalore 2014</a></h3>
+                              </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 bottommargin">
+                          <div class="ipost clearfix">
+                                <div class="entry-image">
+                                    <a href="#"><img class="image_fade" src="images/magazine/thumb/2.jpg" alt="Image"></a>
+                                </div>
+                            <div class="entry-title">
+                                    <h3><a href="blog-single.html">Tyroo at Postback 2014</a></h3>
+                                </div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 bottommargin">
+                          <div class="ipost clearfix">
+                                <div class="entry-image">
+                                    <a href="#"><img class="image_fade" src="images/magazine/thumb/3.jpg" alt="Image"></a>
+                                </div>
+                            <div class="entry-title">
+                                    <h3><a href="blog-single.html">Tyroo at Dmexco 2014,Cologne, Germany</a></h3>
+                                </div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 bottommargin">
+                          <div class="ipost clearfix">
+                                <div class="entry-image">
+                                    <a href="#"><img class="image_fade" src="images/magazine/thumb/4.jpg" alt="Image"></a>
+                                </div>
+                            <div class="entry-title">
+                                    <h3><a href="blog-single.html">Tyroo at LeadsCon New York 2014</a></h3>
+                                </div>
+                          </div>
+                        </div>
+
+                    </div>
+                </div>
+-->
+               <!-- <div class="section"> <div class="heading-block center nomargin">
+                            <h3>Our Marquee clients</h3>
+                            
+                        </div></div>-->
+
+                
+      </section><!-- #content end -->
+
+        <!-- Footer
+        ============================================= -->
+        <footer id="footer" class="dark">
+
+            <div class="container">
+
+                <!-- Footer Widgets
+                ============================================= -->
+                <div class="footer-widgets-wrap clearfix">
+
+                    <div class="col_two_third">
+
+                        <div class="col_one_third">
+                            
+                            <div class="widget clearfix">
+
+                               <img class="footer-logo" alt="" src="images/footer-widget-logo.png">
+
+                                
+
+                                
+
+                            </div>
+
+                        </div>
+
+                        <div class="col_one_third">
+                            
+                            <div class="widget widget_links clearfix">
+
+                                
+
+                                <ul>
+                                    <li><a href="nativetarget.html">Native Target</a></li>
+                                    <li><a href="remarketing.html">Re-Marketing</a></li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col_one_third col_last">
+
+                            <div class="widget widget_links clearfix">
+
+                                
+
+                                <ul>
+                                    <li><a href="aboutus.html">About Us</a></li>
+                                    <li><a href="aboutus.html#team">Team</a></li>
+                                 <li><a href="careers.html">Careers</a></li>
+                                   <li><a href="http://tyroo.com/blog">Blog</a></li>
+                                   <li><a href="contactus.html">ContactUs</a></li>
+                                  
+                                    
+                                    
+                                    
+                                    
+                                    
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col_one_third col_last">
+
+                        
+
+                        
+
+                        <div class="widget clearfix" style="margin-bottom: -20px;">
+
+                            <div class="row">
+
+                                <div class="col-md-6 clearfix bottommargin-sm">
+                                    <a style="margin-right: 10px;" target="_blank" class="social-icon si-dark si-colored si-facebook nobottommargin" href="https://www.facebook.com/tyroo.admin">
+                                        <i class="icon-facebook"></i>
+                                        <i class="icon-facebook"></i>
+                                    </a>
+                                    <a target="_blank" href="https://www.facebook.com/tyroo.admin"><small style="display: block; margin-top: 3px;"><strong>Like us</strong><br>on Facebook</small></a>
+                                </div>
+                                <div class="col-md-6 clearfix">
+                                    <a href="https://twitter.com/tyroomedia" class="social-icon si-dark si-colored si-twitter nobottommargin" target="_blank" style="margin-right: 10px;">
+                                        <i class="icon-twitter"></i>
+                                        <i class="icon-twitter"></i>
+                                    </a>
+                                    <a target="_blank" href="https://twitter.com/tyroomedia"><small style="display: block; margin-top: 3px;"><strong>Follow us</strong><br>on Twitter</small></a>
+                                </div>
+
+                            </div>
+<div class="row">
+
+                                <div class="col-md-6 clearfix bottommargin-sm">
+                                    <a style="margin-right: 10px;" class="social-icon si-dark si-colored si-linkedin nobottommargin" target="_blank" href="https://www.linkedin.com/company/tyroo-media-pvt-ltd">
+                                        <i class="icon-linkedin"></i>
+                                        <i class="icon-linkedin"></i>
+                                    </a>
+                                    <a target="_blank" href="https://www.linkedin.com/company/tyroo-media-pvt-ltd"><small style="display: block; margin-top: 3px;"><strong>Connect with us</strong><br>on LinkedIn</small></a>
+                                </div>
+                                <div class="col-md-6 clearfix">
+                                    <a style="margin-right: 10px;" class="social-icon si-dark si-colored si-icon-comment si-rss nobottommargin" target="_blank" href="http://www.tyroo.com/blog/">
+                                        <i class="icon-comment"></i>
+                                        <i class="icon-comment"></i>
+                                    </a>
+                                    <a target="_blank" href="http://www.tyroo.com/blog/"><small style="display: block; margin-top: 3px;"><strong>Tyroo Blog</strong><br></small></a>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div><!-- .footer-widgets-wrap end -->
+
+            </div>
+
+            <!-- Copyrights
+            ============================================= -->
+            <div id="copyrights">
+
+                <div class="container clearfix">
+
+                    <div class="col_half"><img src="images/svg.png" class="svgftr" /> company | &copy; 2014 Tyroo. All Rights Reserved.<br>
+                        
+                    </div>
+
+                    
+
+                </div>
+
+            </div><!-- #copyrights end -->
+
+        </footer><!-- #footer end -->
+
+</div><!-- #wrapper end -->
+
+    <!-- Go To Top
+    ============================================= -->
+    <div id="gotoTop" class="icon-angle-up"></div>
+
+    <!-- Footer Scripts
+    ============================================= -->
+    <script type="text/javascript" src="js/functions.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ 
+  ga('create', 'UA-43445073-1', 'tyroo.com'); 
+  ga('send', 'pageview');
+ 
+</script>
+</body>
+</html>
