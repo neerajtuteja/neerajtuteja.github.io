@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html class='ng-scope' lang='en' ng-app='app'>
+<head>
+<title>Onecast</title>
+<meta charset='utf-8'>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<meta content='yes' name='apple-mobile-web-app-capable'>
+<meta content='yes' name='mobile-web-app-capable'>
+<base href="//oc.vertile.com"/>
+<script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok2v=1613a3a185/"},atok:"4cb84cce7936c398407c3d2b0fcd4d0f",petok:"88ff562fe02bd5a1dc8442c297a2aa453418749f-1421138144-1800",zone:"vertile.com",rocket:"a",apps:{}}];document.write('<script type="text/javascript" src="//ajax.cloudflare.com/cdn-cgi/nexp/dok2v=919620257c/cloudflare.min.js"><'+'\/script>');}}catch(e){};
+//]]>
+</script>
+<link href='/favicon.ico' rel='shortcut icon'>
+<script type="text/rocketscript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount','UA-7406390-4']);
+_gaq.push(['_setDomainName','auto']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<link data-turbolinks-track="true" href="/assets/pub-2ad9e39f6bbbd97a4ce798fffc57135e.css" media="all" rel="stylesheet"/>
+<script data-turbolinks-track="true" data-rocketsrc="/assets/pub-da7970bc35f81486fe11ae53021064ff.js" type="text/rocketscript"></script>
+<meta content="authenticity_token" name="csrf-param"/>
+<meta content="BUXQ//MtBwBK5Z/Kv79Dx/07WCNYZnXCiqEQhOkcMDM=" name="csrf-token"/>
+</head>
+<body class='index index-index'>
+<div ng-view>
+</div>
+</body>
+</html>
