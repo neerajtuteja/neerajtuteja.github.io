@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html ng-app="videoconference">
+    <head>
+        <!--[if lte IE 8]><script>window.location = "/error/ie";</script><![endif]-->
+        <title with-notification-count>appear.in – one click video conversations</title>
+        <base href="/">
+        <meta
+            name="Description"
+            content="Video conversations with up to 8 people for free - no login, no downloads. Create a video room. Share the link. Appear together. Try it now at https://appear.in">
+        <meta name="google-site-verification" content="Yz9KCimBVHyJ6LzgWkAbcq_L5R2hqbRpfl_zoBp_LzI" />
+
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css" />
+        <base href="https://appear.in"/>
+        <link rel="stylesheet" href="https://d1x2efl61akomv.cloudfront.net/styles/main.d1509c46.css">
+
+        <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/pokjppmpccggefgcenpngoleemajgnmo" />
+        <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/njhajimcngbblegibcmpibgnnmbdmnnb" />
+        <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/bodncoafpihbhpfljcaofnebjkaiaiga" />
+
+        <link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://d1x2efl61akomv.cloudfront.net/images/icons/apple-touch-icon-57x57.a0173b64.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="60x60" href="https://d1x2efl61akomv.cloudfront.net/images/icons/apple-touch-icon-60x60.76ea91c6.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://d1x2efl61akomv.cloudfront.net/images/icons/apple-touch-icon-72x72.58364e1f.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://d1x2efl61akomv.cloudfront.net/images/icons/apple-touch-icon-76x76.f36ef8bd.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://d1x2efl61akomv.cloudfront.net/images/icons/apple-touch-icon-114x114.60ed35e1.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://d1x2efl61akomv.cloudfront.net/images/icons/apple-touch-icon-120x120.4613ab64.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://d1x2efl61akomv.cloudfront.net/images/icons/apple-touch-icon-144x144.347eea1b.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://d1x2efl61akomv.cloudfront.net/images/icons/apple-touch-icon-152x152.6fa1afa8.png" />
+        <link rel="icon" type="image/png" href="https://d1x2efl61akomv.cloudfront.net/images/icons/favicon-196x196.9453e254.png" sizes="196x196" />
+        <link rel="icon" type="image/png" href="https://d1x2efl61akomv.cloudfront.net/images/icons/favicon-16x16.a2b144b0.png" sizes="16x16" />
+        <link rel="icon" type="image/png" href="https://d1x2efl61akomv.cloudfront.net/images/icons/favicon-32x32.4bcea2b6.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="https://d1x2efl61akomv.cloudfront.net/images/icons/favicon-96x96.a1e16563.png" sizes="96x96" />
+        <link rel="icon" type="image/png" href="https://d1x2efl61akomv.cloudfront.net/images/icons/favicon-128.34137054.png" sizes="128x128" />
+        <meta name="application-name" content="&nbsp;"/>
+        <meta name="msapplication-TileColor" content="#FFFFFF" />
+        <meta name="msapplication-square70x70logo" content="https://d1x2efl61akomv.cloudfront.net/images/icons/mstile-70x70.34137054.png" />
+        <meta name="msapplication-TileImage" content="https://d1x2efl61akomv.cloudfront.net/images/icons/mstile-144x144.347eea1b.png" />
+        <meta name="msapplication-square150x150logo" content="https://d1x2efl61akomv.cloudfront.net/images/icons/mstile-150x150.3593ae38.png" />
+        <meta name="msapplication-square310x310logo" content="https://d1x2efl61akomv.cloudfront.net/images/icons/mstile-310x310.984b1e57.png" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="appear.in" />
+        <meta property="og:site_name" content="appear.in">
+        <meta property="og:image" content="https://d1x2efl61akomv.cloudfront.net/images/icons/favicon.45260966.png" />
+        <meta property="og:description" content="Video conversations with up to 8 people for free - no login, no downloads. Create a video room. Share the link. Appear together. Try it now at https://appear.in" />
+        <meta property="og:url" content="https://appear.in">
+        <meta property="fb:app_id" content="1411558269071152"/>
+
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=0">
+
+        <script type="text/javascript" src="//use.typekit.net/foj7ell.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    </head>
+    <body class="{{ controller }}" ng-class="{'noflash': !hasFlash}">
+        <div class="wrapper frontpage-content-wrapper" ng-view></div>
+        <noscript>
+            <div class="description-section even">
+                <section>
+                    <p>This page requires JavaScript and a modern browser to function correctly.</p>
+                    <h1>How it works</h1>
+                    <div class="left-column">
+                        <h2>No login or downloads</h2>
+                        <p>appear.in aims to make it super-easy to start talking over video. Therefore, we do not require you to register an account or download anything. The link to your room is all you need to connect to those you want to talk to. All you need is yourself, someone to talk to and a supported browser.</p>
+
+                        <h2>Easy to invite anyone</h2>
+                        <p>You can create a room whenever you want to, and use any room name. In fact, you don't even have to visit our front page, you can just type in "appear.in/roomname" in the address bar in your browser, and you'll enter directly into the room! Anyone who enters the same room link as you, will come into your room.</p>
+
+                        <h2>Peer-to-peer</h2>
+                        <p>appear.in uses peer-to-peer communication, meaning that the video streams are sent directly between you and the people you are talking to. Nothing is stored on our server and all the communication is encrypted over SSL.</p>
+                    </div>
+                    <div class="right-column">
+                        <h2>Supported browsers</h2>
+                        You can use appear.in in these browsers:
+                        <div class="icons">
+                            <ul>
+                                <li class="browser-icon">
+                                <a href="https://www.google.com/chrome" target="_blank">
+                                    <img height="64" width="64" alt="chrome" src="https://d1x2efl61akomv.cloudfront.net/images/chrome-logo.35b66b17.svg" />
+                                    <span>Chrome</span>
+                                </a>
+                                </li><li class="browser-icon">
+                                <a href="https://www.mozilla.org/firefox" target="_blank">
+                                    <img height="64" width="64" alt="firefox" src="https://d1x2efl61akomv.cloudfront.net/images/firefox_128x128.7b9e6fe7.png" />
+                                    <span>Firefox</span>
+                                </a>
+                                </li><li class="browser-icon">
+                                <a href="http://www.opera.com/" target="_blank">
+                                    <img height="64" width="64" alt="opera" src="https://d1x2efl61akomv.cloudfront.net/images/opera-logo.0659d085.png" />
+                                    <span>Opera</span>
+                                </a>
+                                </li>
+                            </ul>
+                            <p>appear.in is built with a technology called WebRTC. For you this means no plugins or installation. Currently WebRTC is only supported in the browsers above.</p>
+                        </div>
+                        <h2>Help!</h2>
+                        <p>Check out our <a href="/information/faq">FAQ</a> to find answers to the most common questions our users have. If you can't find the answer you're looking for, shoot us an <a href="mailto:feedback@appear.in">email</a>.</p>
+
+                        <h2>Press</h2>
+                        <p>Resources for journalists and bloggers, such as logos, team photos, press releases can be found <a href="/information/press">here</a>.</p>
+                    </div>
+                </section>
+            </div>
+
+            <article class="testimonial" flags-show="testimonials">
+                <div class="content">
+                    <section class="profile-image">
+                        <img src="https://pbs.twimg.com/profile_images/378800000767119551/6a0f139c3f85b023b8d7da81396b5343.png" class="profile" alt="" height="70" width="70">
+                    </section><section class="text">
+                        <p class="body">
+                        "A user can go to appear.in and on-the-fly can grab a URL for their their own video chat room.  No registration is required and as many as 7 others can be invited to the videoconference.  It’s free, simple and quick - and enables spontaneous group video communication."
+                        </p>
+
+                        <section class="attribution">
+                            <p class="title">WebRTC Insights</p>
+                            <p class="link"><a href="http://webrtcinsights.quadrigaconsulting.co.uk/index.php/appear-in-your-own-broadcast/">http://webrtcinsights.quadrigaconsulting.co.uk/index.php/appear-in-your-own-broadcast/</a></p>
+                        </section>
+                    </section>
+                </div>
+            </article>
+
+            <div class="description-section">
+                <section>
+                    <div class="left-column">
+                        <h1>Give us feedback</h1>
+                        <p>If you need help, or just want to tell us how you like appear.in, contact us at <a href="mailto:feedback@appear.in">feedback@appear.in</a>. Check out our blog at <a href="http://blog.appear.in">blog.appear.in</a> to read about recent updates.</p>
+                        <h2>Get updates</h2>
+                        <p>Be the first to know about improvements in appear.in! Sign up to our mailinglist to receive news and invitations to give your opinion about future features in appear.in.</p>
+                        <form class="subscribe-newsletter inline" action="http://appear.us2.list-manage.com/subscribe/post?u=5919921b6414f5578ff5b7750&amp;id=fcc8f9fc1a" method="post" id="mc-embedded-subscribe-form" class="validate" target="_blank" ng-hide="newsletterSignupButtonPressed">
+                            <input type="email" placeholder="your@email.com" value="" name="EMAIL" class="required email">
+                            <button type="submit" class="pink-button" name="subscribe">Subscribe</button>
+                        </form>
+                    </div>
+                    <div class="right-column">
+                        <h1>Contact us</h1>
+                        <p>If you want to talk to a member of the appear.in team, <a href="information/contact/">just click here to talk</a>. We will be notified when you enter the room and most of the time we will appear.in within seconds. We are available between 9 - 16 CET on weekdays.</p>
+
+                        <h1>Developers</h1>
+                        <p>We have an API! Visit our developer pages at <a href="http://appearin.github.com">appearin.github.com</a> and <a href="http://appearin.github.com/iswebrtcready">appearin.github.com/iswebrtcready</a> for more information.</p>
+                        <p>The API is still in its early stages and highly underdocumented, but sign up on our <a href="http://eepurl.com/J-_Qr">developer mailing list</a> to be kept updated on its future development. For now you can play around with what we got.</p>
+                    </div>
+                </section>
+            </div>
+            <footer class="frontpage-footer">
+                A product by <a href="https://twitter.com/TelenorDigital">Telenor Digital AS</a>.
+            </footer>
+        </noscript>
+
+    <script src="//www.google-analytics.com/cx/api.js?experiment=xUNPwbQOQ3mz1v9DeYmT4Q"></script>
+    <script>
+        window.googleAnalyticsExperimentId='xUNPwbQOQ3mz1v9DeYmT4Q';
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="https://d1x2efl61akomv.cloudfront.net/libraries/jquery-1.11.0.min.js"><\/script>')</script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular.min.js"></script>
+    <script>window.angular || document.write('<script src="https://d1x2efl61akomv.cloudfront.net/libraries/angular.min.js"><\/script>')</script>
+    <script>
+        (function () {
+            var callstatRooms  = [
+                '/jonas',
+                '/ingrid',
+                '/appearin',
+                '/svein',
+                '/stigerland'
+            ];
+
+            function isCallstatsEnabled() {
+                return window.location.search.indexOf('callstats') !== -1;
+            }
+            function isCallstatsSupportedInRoom(roomName) {
+                return callstatRooms.indexOf(roomName) !== -1;
+            }
+
+            if (isCallstatsEnabled() || isCallstatsSupportedInRoom(window.location.pathname)) {
+                document.write('<script src="https://d1x2efl61akomv.cloudfront.net/libraries/socket.io.1.js"><\/script>');
+                document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/1.5.0/sha.js"><\/script>');
+                document.write('<script src="https://api.callstats.io/callstats.min.js"><\/script>');
+            }
+        } ());
+    </script>
+    <script src="https://d1x2efl61akomv.cloudfront.net/scripts/libs.e4b0fdc2.js"></script>
+    <script src="https://d1x2efl61akomv.cloudfront.net/scripts/templates.148061d3.js"></script>
+
+    <script src="https://d1x2efl61akomv.cloudfront.net/scripts/main.dbb9a153.js"></script>
+
+    <!-- Start Visual Website Optimizer Asynchronous Code -->
+    <script type='text/javascript'>
+    var _vwo_code=(function(){
+    var account_id=140300,
+    settings_tolerance=2000,
+    library_tolerance=2500,
+    use_existing_jquery=false,
+    // DO NOT EDIT BELOW THIS LINE
+    f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+    </script>
+    <!-- End Visual Website Optimizer Asynchronous Code -->
+
+    </body>
+</html>
